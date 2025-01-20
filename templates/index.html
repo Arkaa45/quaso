@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Distribusi Poisson - Ekspedisi</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulasi Distribusi Poisson - Pengantaran Paket</h1>
+        
+        <!-- Instruksi Penggunaan -->
+        <div class="instructions">
+            <h2>Cara Menggunakan</h2>
+            <ol>
+                <li>Masukkan rata-rata jumlah paket yang diantar per hari (λ) pada kolom "Rata-rata paket (λ)".</li>
+                <li>Masukkan jumlah paket tertentu yang ingin dihitung probabilitasnya (k) pada kolom "Jumlah paket (k)".</li>
+                <li>Centang "Hitung probabilitas kumulatif" jika Anda ingin menghitung probabilitas untuk pengantaran hingga k paket.</li>
+                <li>Tekan tombol "Hitung Probabilitas".</li>
+            </ol>
+        </div>
+
+        <!-- Form Input -->
+        <form method="POST">
+            <label for="lambda">Rata-rata paket per hari (λ):</label>
+            <input type="number" step="0.01" name="lambda" id="lambda" placeholder="Contoh: 50" required>
+            
+            <label for="k">Jumlah paket (k):</label>
+            <input type="number" name="k" id="k" placeholder="Contoh: 55" required>
+            
+            <label for="cumulative">Hitung probabilitas kumulatif (P(X ≤ k))</label>
+            <input type="checkbox" name="cumulative" id="cumulative">
+
+            <button type="submit">Hitung Probabilitas</button>
+        </form>
+
+        <!-- Hasil Perhitungan -->
+        {% if result is not none %}
+            <h2>Hasil Perhitungan</h2>
+            <p>Probabilitas bahwa tepat {{ k }} paket diantar dalam satu hari: {{ result }}</p>
+        {% endif %}
+        
+        {% if cumulative is not none %}
+            <p>Probabilitas kumulatif (hingga {{ k }} paket diantar): {{ cumulative }}</p>
+        {% endif %}
+
+        <!-- Penjelasan Hasil -->
+        {% if explanation is not none %}
+            <h3>Penjelasan</h3>
+            <p>{{ explanation }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

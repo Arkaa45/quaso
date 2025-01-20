@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d3d3d3,  #fff8dc); 
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+h2, h3 {
+    color: #a0522d;
+}
+
+.instructions {
+    background: #eef9ff;
+    border-left: 4px solid #a0522d;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #d2b48c; /* Coklat muda */
+    color: white;
+    border: 2px solid #a0522d; /* Outline coklat tua */
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #c19a6b; /* Sedikit lebih gelap saat hover */
+    transform: scale(1.02); /* Efek zoom ringan saat hover */
+    border-color: #8b4513; /* Perubahan warna outline saat hover */
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ol {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
